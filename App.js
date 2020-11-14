@@ -7,26 +7,18 @@
  */
 
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
- 
-  StatusBar,
-} from 'react-native';
+import {SafeAreaView, StyleSheet, StatusBar} from 'react-native';
 
-import {
-
-  Colors,
-
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Home from './src/screens/Home';
+import Navigation from './src/navigation';
 
 const App: () => React$Node = () => {
   return (
     <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-       <Home />
+      <StatusBar barStyle="light-content" />
+      <SafeAreaView style={{flex: 1, backgroundColor: 'black'}}>
+        <Navigation />
       </SafeAreaView>
     </>
   );

@@ -15,9 +15,8 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 
 const Post = (props) => {
-  const [posts, setPosts] = useState(props.posts);
+  const [post, setPosts] = useState(props.post);
   const [isLiked, setisLiked] = useState(false);
-
   // const {posts} = props;
   const [paused, setpaused] = useState(false);
 
@@ -28,8 +27,8 @@ const Post = (props) => {
   const onlikePress = () => {
     const linkesToAdd = isLiked ? -1 : 1;
     setPosts({
-      ...posts,
-      likes: posts.likes + linkesToAdd,
+      ...post,
+      likes: post.likes + linkesToAdd,
     });
     setisLiked(!isLiked);
   };
@@ -39,12 +38,13 @@ const Post = (props) => {
         <View>
           <Video
             source={{
-              uri: posts.videoUri,
+              uri: post.videoUri,
             }}
             style={styles.video}
             resizeMode={'cover'}
             onError={(e: LoadError) => console.log(e)}
             repeat={true}
+            playInBackground={true}
             paused={paused}
           />
 
@@ -54,7 +54,7 @@ const Post = (props) => {
                 <Image
                   style={styles.profilePicture}
                   source={{
-                    uri: posts.user.imageUri,
+                    uri: post.user.imageUri,
                   }}
                 />
               </View>
@@ -63,7 +63,7 @@ const Post = (props) => {
                 onPress={onlikePress}
                 style={styles.iconContainer}>
                 <AntDesign name={'heart'} size={40} color={isLiked ? 'red': 'white'} />
-                <Text style={styles.statsLabel}>{posts.likes}</Text>
+                <Text style={styles.statsLabel}>{post.likes}</Text>
               </TouchableOpacity>
 
               <View style={styles.iconContainer}>
@@ -79,13 +79,13 @@ const Post = (props) => {
 
             <View style={styles.bottomContainer}>
               <View>
-                <Text style={styles.handle}>@{posts.user.username}</Text>
-                <Text style={styles.description}>{posts.description}</Text>
+                <Text style={styles.handle}>@{post.user.username}</Text>
+                <Text style={styles.description}>{post.description}</Text>
 
                 <View style={styles.songrow}>
                   <Entypo name={'beamed-note'} size={24} color="white" />
 
-                  <Text style={styles.songname}>{posts.songName}</Text>
+                  <Text style={styles.songname}>{post.songName}</Text>
                 </View>
               </View>
 
@@ -93,7 +93,7 @@ const Post = (props) => {
                 <Image
                   style={styles.songImage}
                   source={{
-                    uri: posts.songImage,
+                    uri: post.songImage,
                   }}
                 />
               </View>
