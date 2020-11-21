@@ -19,9 +19,12 @@ const Post = (props) => {
   const [isLiked, setisLiked] = useState(false);
   // const {posts} = props;
   const [paused, setpaused] = useState(false);
+  const [muted, setmuted] = useState(false)
 
   const onPlayPausePress = () => {
     setpaused(!paused);
+    setmuted(!muted);
+    
   };
 
   const onlikePress = () => {
@@ -44,7 +47,8 @@ const Post = (props) => {
             resizeMode={'cover'}
             onError={(e: LoadError) => console.log(e)}
             repeat={true}
-            playInBackground={true}
+            muted 
+            playInBackground={false}
             paused={paused}
           />
 
