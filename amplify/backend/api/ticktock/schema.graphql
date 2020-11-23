@@ -1,8 +1,7 @@
 type User @model {
   id: ID!
   username: String!
-  name: String
-  email: String
+  email: String!
   imageUri: String
   posts: [Post] @connection(keyName: "byUser", fields: ["id"])
 }
@@ -10,10 +9,10 @@ type User @model {
 type Post @model @key(name: "byUser", fields: ["userID"]) {
   id: ID!
   videoUri: String!
-  description: String
-  likes: Int
-  comments: Int
-  shares: Int
+  description: String!
+  likes: Int!
+  comments: Int!
+  shares: Int!
 
   userID: ID!
   user: User @connection(fields: ["userID"])
@@ -25,6 +24,5 @@ type Post @model @key(name: "byUser", fields: ["userID"]) {
 type Song @model {
   id: ID!
   name: String!
-  songUri: String
   imageUri: String
 }

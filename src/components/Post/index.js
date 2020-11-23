@@ -72,12 +72,12 @@ const Post = (props) => {
 
               <View style={styles.iconContainer}>
                 <FontAwesome name={'commenting'} size={40} color="white" />
-                <Text style={styles.statsLabel}>123</Text>
+                <Text style={styles.statsLabel}>{post.comments}</Text>
               </View>
 
               <View style={styles.iconContainer}>
                 <Fontisto name={'share-a'} size={35} color="white" />
-                <Text style={styles.statsLabel}>123</Text>
+                <Text style={styles.statsLabel}>{post.shares}</Text>
               </View>
             </View>
 
@@ -88,8 +88,7 @@ const Post = (props) => {
 
                 <View style={styles.songrow}>
                   <Entypo name={'beamed-note'} size={24} color="white" />
-
-                  <Text style={styles.songname}>{post.songName}</Text>
+                  <Text style={styles.songname}>{post.song.name}</Text>
                 </View>
               </View>
 
@@ -97,7 +96,7 @@ const Post = (props) => {
                 <Image
                   style={styles.songImage}
                   source={{
-                    uri: post.songImage,
+                    uri: post.song.imageUri,
                   }}
                 />
               </View>

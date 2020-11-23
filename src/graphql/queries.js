@@ -6,7 +6,6 @@ export const getUser = /* GraphQL */ `
     getUser(id: $id) {
       id
       username
-      name
       email
       imageUri
       posts {
@@ -39,7 +38,6 @@ export const listUsers = /* GraphQL */ `
       items {
         id
         username
-        name
         email
         imageUri
         posts {
@@ -65,7 +63,6 @@ export const getPost = /* GraphQL */ `
       user {
         id
         username
-        name
         email
         imageUri
         posts {
@@ -78,7 +75,6 @@ export const getPost = /* GraphQL */ `
       song {
         id
         name
-        songUri
         imageUri
         createdAt
         updatedAt
@@ -106,7 +102,6 @@ export const listPosts = /* GraphQL */ `
         user {
           id
           username
-          name
           email
           imageUri
           createdAt
@@ -116,7 +111,6 @@ export const listPosts = /* GraphQL */ `
         song {
           id
           name
-          songUri
           imageUri
           createdAt
           updatedAt
@@ -133,7 +127,6 @@ export const getSong = /* GraphQL */ `
     getSong(id: $id) {
       id
       name
-      songUri
       imageUri
       createdAt
       updatedAt
@@ -150,7 +143,6 @@ export const listSongs = /* GraphQL */ `
       items {
         id
         name
-        songUri
         imageUri
         createdAt
         updatedAt

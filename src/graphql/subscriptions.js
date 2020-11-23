@@ -6,7 +6,6 @@ export const onCreateUser = /* GraphQL */ `
     onCreateUser {
       id
       username
-      name
       email
       imageUri
       posts {
@@ -34,7 +33,6 @@ export const onUpdateUser = /* GraphQL */ `
     onUpdateUser {
       id
       username
-      name
       email
       imageUri
       posts {
@@ -62,7 +60,6 @@ export const onDeleteUser = /* GraphQL */ `
     onDeleteUser {
       id
       username
-      name
       email
       imageUri
       posts {
@@ -98,7 +95,6 @@ export const onCreatePost = /* GraphQL */ `
       user {
         id
         username
-        name
         email
         imageUri
         posts {
@@ -111,7 +107,6 @@ export const onCreatePost = /* GraphQL */ `
       song {
         id
         name
-        songUri
         imageUri
         createdAt
         updatedAt
@@ -134,7 +129,6 @@ export const onUpdatePost = /* GraphQL */ `
       user {
         id
         username
-        name
         email
         imageUri
         posts {
@@ -147,7 +141,6 @@ export const onUpdatePost = /* GraphQL */ `
       song {
         id
         name
-        songUri
         imageUri
         createdAt
         updatedAt
@@ -170,7 +163,6 @@ export const onDeletePost = /* GraphQL */ `
       user {
         id
         username
-        name
         email
         imageUri
         posts {
@@ -183,7 +175,6 @@ export const onDeletePost = /* GraphQL */ `
       song {
         id
         name
-        songUri
         imageUri
         createdAt
         updatedAt
@@ -198,7 +189,6 @@ export const onCreateSong = /* GraphQL */ `
     onCreateSong {
       id
       name
-      songUri
       imageUri
       createdAt
       updatedAt
@@ -210,7 +200,6 @@ export const onUpdateSong = /* GraphQL */ `
     onUpdateSong {
       id
       name
-      songUri
       imageUri
       createdAt
       updatedAt
@@ -222,7 +211,6 @@ export const onDeleteSong = /* GraphQL */ `
     onDeleteSong {
       id
       name
-      songUri
       imageUri
       createdAt
       updatedAt

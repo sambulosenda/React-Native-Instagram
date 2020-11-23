@@ -9,7 +9,6 @@ export const createUser = /* GraphQL */ `
     createUser(input: $input, condition: $condition) {
       id
       username
-      name
       email
       imageUri
       posts {
@@ -40,7 +39,6 @@ export const updateUser = /* GraphQL */ `
     updateUser(input: $input, condition: $condition) {
       id
       username
-      name
       email
       imageUri
       posts {
@@ -71,7 +69,6 @@ export const deleteUser = /* GraphQL */ `
     deleteUser(input: $input, condition: $condition) {
       id
       username
-      name
       email
       imageUri
       posts {
@@ -110,7 +107,6 @@ export const createPost = /* GraphQL */ `
       user {
         id
         username
-        name
         email
         imageUri
         posts {
@@ -123,7 +119,6 @@ export const createPost = /* GraphQL */ `
       song {
         id
         name
-        songUri
         imageUri
         createdAt
         updatedAt
@@ -149,7 +144,6 @@ export const updatePost = /* GraphQL */ `
       user {
         id
         username
-        name
         email
         imageUri
         posts {
@@ -162,7 +156,6 @@ export const updatePost = /* GraphQL */ `
       song {
         id
         name
-        songUri
         imageUri
         createdAt
         updatedAt
@@ -188,7 +181,6 @@ export const deletePost = /* GraphQL */ `
       user {
         id
         username
-        name
         email
         imageUri
         posts {
@@ -201,7 +193,6 @@ export const deletePost = /* GraphQL */ `
       song {
         id
         name
-        songUri
         imageUri
         createdAt
         updatedAt
@@ -219,7 +210,6 @@ export const createSong = /* GraphQL */ `
     createSong(input: $input, condition: $condition) {
       id
       name
-      songUri
       imageUri
       createdAt
       updatedAt
@@ -234,7 +224,6 @@ export const updateSong = /* GraphQL */ `
     updateSong(input: $input, condition: $condition) {
       id
       name
-      songUri
       imageUri
       createdAt
       updatedAt
@@ -249,7 +238,6 @@ export const deleteSong = /* GraphQL */ `
     deleteSong(input: $input, condition: $condition) {
       id
       name
-      songUri
       imageUri
       createdAt
       updatedAt
